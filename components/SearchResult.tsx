@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import Icon from './Icon';
 import GridItemsContext from "../store/grid-items-context";
+import { rgbDataURL } from "../util/blur";
 
 export default function SearchResult(props: any) {
   const { attributes, listeners, setNodeRef, transform, transition} = useSortable({id: props.result.id})
@@ -41,7 +42,7 @@ export default function SearchResult(props: any) {
           src={props.result.imageURL}
           loading="lazy"
           placeholder="blur"
-          blurDataURL="/square.png"
+          blurDataURL={rgbDataURL(255, 255, 255)}
           fill={true}
           className="border border-slate-300 rounded-sm">
         </Image>
