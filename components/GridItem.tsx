@@ -7,11 +7,10 @@ import Icon from './Icon';
 import GridItemsContext from "../store/grid-items-context";
 
 export default function GridItem(props: any) {
-  const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition} = useSortable({id: props.item.id})
-  const gridItemsCtx = useContext(GridItemsContext);
-
   // TODO: Enable once screenshot issue is fixed.
   // const [showInfo, setShowInfo] = useState(false);
+  const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition} = useSortable({id: props.item.id})
+  const gridItemsCtx = useContext(GridItemsContext);
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -39,7 +38,8 @@ export default function GridItem(props: any) {
   } else if (numAlbums <= 10) {
     instaStoryContainerStyles = 'w-16';
     instaStoryAlbumStyles = 'w-16 h-16';
-  } else if (numAlbums <= 24) {
+  } else {
+    // We shouldn't ever reach this.
     instaStoryContainerStyles = 'w-10';
     instaStoryAlbumStyles = 'w-10 h-10';
   }

@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { MdOutlineAddCircle } from 'react-icons/md'
-
 import Image from "next/image";
+
 import Icon from './Icon';
 import GridItemsContext from "../store/grid-items-context";
 
@@ -40,6 +40,8 @@ export default function SearchResult(props: any) {
           alt={props.result.albumTitle} 
           src={props.result.imageURL}
           loading="lazy"
+          placeholder="blur"
+          blurDataURL="/square.png"
           fill={true}
           className="border border-slate-300 rounded-sm">
         </Image>

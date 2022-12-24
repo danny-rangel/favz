@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import ImageContext from "../store/image-context";
 import ColorPicker from './ColorPicker';
 import SingleSelectPicker from "./SingleSelectPicker";

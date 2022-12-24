@@ -1,5 +1,5 @@
 import { arrayMove } from '@dnd-kit/sortable';
-import {createContext, useState} from 'react';
+import { createContext, useState } from 'react';
 
 interface GridItemsContextInterface {
   gridItems: GridItem[],

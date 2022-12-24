@@ -1,8 +1,8 @@
 import Head from 'next/head'
+
 import AppBar from '../components/AppBar';
 import SideBar from '../components/SideBar';
 import Grid from '../components/Grid';
-
 import { GridItemsContextProvider } from '../store/grid-items-context';
 import { ImageContextProvider } from '../store/image-context';
 
