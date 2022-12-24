@@ -39,8 +39,6 @@ export default function SearchResult(props: any) {
         <Image
           alt={props.result.albumTitle} 
           src={props.result.imageURL}
-          placeholder="blur"
-          blurDataURL="/square.png"
           loading="lazy"
           fill={true}
           className="border border-slate-300 rounded-sm">

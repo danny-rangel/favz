@@ -5,7 +5,7 @@ import SingleSelectPicker from "./SingleSelectPicker";
 
 export default function SearchBar(props: any) {
   // TODO: Implement once new APIs for movies is done.
-  const [searchTopic, setSearchTopic] = useState('Albums');
+  // const [searchTopic, setSearchTopic] = useState('Albums');
   const [searchQuery, setSearchQuery] = useState('');
   const searchTopics = ['Albums', 'Movies']
   

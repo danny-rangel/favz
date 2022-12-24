@@ -38,7 +38,6 @@ export default function SingleSelectPicker(props: any) {
               <Menu.Item key={index} disabled={value === 'IG Post' || value == 'Movies'}>
                 {({ active }) => (
                   <a 
-                    href="#" 
                     onClick={() => handleChange(value)}
                     className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm')}>
                     {value}
