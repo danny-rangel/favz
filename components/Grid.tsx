@@ -7,7 +7,7 @@ import {
   SortableContext,
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
-import { toJpeg, } from 'html-to-image';
+import { toJpeg, toPng, } from 'html-to-image';
 
 import { PhoneFrame } from "./PhoneFrame";
 import GridItem from "./GridItem";
@@ -26,10 +26,10 @@ export default function Grid() {
 
   function handleDownload() {
     if (gridRef.current === null) return;
-    toJpeg(gridRef.current, { canvasWidth: 1080, canvasHeight: 1920, quality: 1.0 })
+    toPng(gridRef.current, { canvasWidth: 1080, canvasHeight: 1920, quality: 1.0 })
       .then((dataUrl) => {
         const link = document.createElement('a')
-        link.download = 'favz.jpeg'
+        link.download = 'favz'
         link.href = dataUrl
         link.click()
       });
