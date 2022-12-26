@@ -7,7 +7,7 @@ import {
   SortableContext,
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
-import { toJpeg, toPng, } from 'html-to-image';
+import { toPng } from 'html-to-image';
 
 import { PhoneFrame } from "./PhoneFrame";
 import GridItem from "./GridItem";
@@ -46,7 +46,7 @@ export default function Grid() {
             <div className="flex items-center justify-center mt-2">
               <div
                 ref={gridRef}
-                className="flex flex-wrap insta-story justify-center content-center"
+                className={`flex flex-wrap ${imageCtx.gridSize === 'IG Story' ? 'insta-story' : 'insta-post'} justify-center content-center`}
                 style={{ backgroundColor: imageCtx.backgroundColor }}
               >
                 {gridItemsCtx.totalGridItems !== 0 && gridItemsCtx.gridItems.map((e: any) => <GridItem key={e.id} item={e} />)}

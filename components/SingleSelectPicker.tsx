@@ -33,9 +33,9 @@ export default function SingleSelectPicker(props: any) {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-30 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+          <div className="py-1 cursor-pointer">
             {props.options.map((value: string, index: number) => 
-              <Menu.Item key={index} disabled={value === 'IG Post' || value == 'Movies'}>
+              <Menu.Item key={index} disabled={value === 'Movies'}>
                 {({ active }) => (
                   <a 
                     onClick={() => handleChange(value)}

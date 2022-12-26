@@ -21,7 +21,7 @@ const ImageContext = createContext<ImageContextInterface>({
 });
 
 export function ImageContextProvider(props: any) {
-  const [gridSize, setGridSize] = useState('');
+  const [gridSize, setGridSize] = useState('IG Story');
   const [imageType, setImageType] = useState('');
   const [backgroundColor, setBackgroundColor] = useState('#2d3748');
   const [showInfo, setShowInfo] = useState(false);

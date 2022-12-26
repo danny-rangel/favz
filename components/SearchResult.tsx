@@ -20,7 +20,7 @@ export default function SearchResult(props: any) {
   const itemIsGridItem: any = gridItemsCtx.itemIsGridItem(props.result.id);
 
   function addItemToGridItems() {
-    if (itemIsGridItem || gridItemsCtx.totalGridItems === 10) return;
+    if (itemIsGridItem || gridItemsCtx.totalGridItems >= 12) return;
     gridItemsCtx.addGridItem({
       id: props.result.id, 
       albumTitle: props.result.albumTitle, 
@@ -42,7 +42,7 @@ export default function SearchResult(props: any) {
           src={props.result.imageURL}
           loading="lazy"
           placeholder="blur"
-          blurDataURL={rgbDataURL(255, 255, 255)}
+          blurDataURL={rgbDataURL(45, 55, 72)}
           fill={true}
           className="border border-slate-300 rounded-sm">
         </Image>
