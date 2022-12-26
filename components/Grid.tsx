@@ -26,7 +26,8 @@ export default function Grid() {
 
   function handleDownload() {
     if (gridRef.current === null) return;
-    toPng(gridRef.current, { canvasWidth: 1080, canvasHeight: 1920, quality: 1.0 })
+    const canvasHeight = imageCtx.gridSize === 'IG Post' ? 1080 : 1920;
+    toPng(gridRef.current, { canvasWidth: 1080, canvasHeight: canvasHeight, quality: 1.0 })
       .then((dataUrl) => {
         const link = document.createElement('a')
         link.download = 'favz'
