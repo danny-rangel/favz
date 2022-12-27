@@ -48,12 +48,10 @@ export default function GridItem(props: any) {
   function calculateIGStoryGridItemDimensionPixels(): string {
     if (numAlbums <= 2) {
       return '40';
-    } else if (numAlbums <= 3) {
-      return '24';
     } else if (numAlbums <= 4) {
       return '20';
     } else if (numAlbums <= 12) {
-      return '14';
+      return '10';
     } else {
       // We shouldn't ever reach this.
       return '8';
