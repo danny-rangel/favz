@@ -22,39 +22,41 @@ export default function GridItem(props: any) {
   const itemIsGridItem: any = gridItemsCtx.itemIsGridItem(props.item.id);
   const numAlbums = gridItemsCtx.totalGridItems;
 
-  let gridItemDimensionPixels = '';
+  let containerDimensionPixels = '';
+  let albumDimensionPixels = '';
 
   if (imageCtx.gridSize === 'IG Post') {
-    gridItemDimensionPixels = calculateIGPostGridItemDimensionPixels();
-  } else if (imageCtx.gridSize === 'IG Story') {
-    gridItemDimensionPixels = calculateIGStoryGridItemDimensionPixels();
-  }
-
-  // Calculates pixel dimensions (height and width) for IG posts.
-  function calculateIGPostGridItemDimensionPixels(): string {
     if (numAlbums <= 1) {
-      return '40';
+      containerDimensionPixels = 'w-40';
+      albumDimensionPixels = 'w-40 h-40';
     } else if (numAlbums <= 4) {
-      return '20';
+      containerDimensionPixels = 'w-20';
+      albumDimensionPixels = 'w-20 h-20';
     } else if (numAlbums <= 12) {
-      return '10';
+      containerDimensionPixels = 'w-10';
+      albumDimensionPixels = 'w-10 h-10';
     } else {
       // We shouldn't ever reach this.
-      return '8';
+      containerDimensionPixels = 'w-8';
+      albumDimensionPixels = 'w-8 h-8';
     }
-  }
-
-  // Calculates pixel dimensions (height and width) for IG stories.
-  function calculateIGStoryGridItemDimensionPixels(): string {
+  } else if (imageCtx.gridSize === 'IG Story') {
     if (numAlbums <= 2) {
-      return '40';
-    } else if (numAlbums <= 4) {
-      return '20';
+      containerDimensionPixels = 'w-40';
+      albumDimensionPixels = 'w-40 h-40';
+    } else if (numAlbums <= 3) {
+      containerDimensionPixels = 'w-24';
+      albumDimensionPixels = 'w-24 h-24';
+    } else if (numAlbums <= 8) {
+      containerDimensionPixels = 'w-20';
+      albumDimensionPixels = 'w-20 h-20';
     } else if (numAlbums <= 12) {
-      return '10';
+      containerDimensionPixels = 'w-12';
+      albumDimensionPixels = 'w-12 h-12';
     } else {
       // We shouldn't ever reach this.
-      return '8';
+      containerDimensionPixels = 'w-10';
+      albumDimensionPixels = 'w-10 h-10';
     }
   }
 
@@ -68,8 +70,8 @@ export default function GridItem(props: any) {
       ref={setNodeRef}
       style={style}
       {...attributes}
-      className={`flex flex-col items-center justify-center text-center m-1 w-${gridItemDimensionPixels} cursor-default group group-focus-within:scale-100`}>
-      <div className={`relative w-${gridItemDimensionPixels} h-${gridItemDimensionPixels}`}>
+      className={`flex flex-col items-center justify-center text-center m-1 ${containerDimensionPixels} cursor-default group group-focus-within:scale-100`}>
+      <div className={`relative ${albumDimensionPixels}`}>
         <picture>
           <img 
             alt={props.item.albumTitle}
