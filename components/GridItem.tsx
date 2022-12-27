@@ -29,9 +29,15 @@ export default function GridItem(props: any) {
     if (numAlbums <= 1) {
       containerDimensionPixels = 'w-40';
       albumDimensionPixels = 'w-40 h-40';
+    } else if (numAlbums <= 2) {
+      containerDimensionPixels = 'w-[5.5rem]';
+      albumDimensionPixels = 'w-[5.5rem] h-[5.5rem]';
     } else if (numAlbums <= 4) {
       containerDimensionPixels = 'w-20';
       albumDimensionPixels = 'w-20 h-20';
+    } else if (numAlbums <= 9) {
+      containerDimensionPixels = 'w-14';
+      albumDimensionPixels = 'w-14 h-14';
     } else if (numAlbums <= 12) {
       containerDimensionPixels = 'w-10';
       albumDimensionPixels = 'w-10 h-10';
@@ -45,14 +51,17 @@ export default function GridItem(props: any) {
       containerDimensionPixels = 'w-40';
       albumDimensionPixels = 'w-40 h-40';
     } else if (numAlbums <= 3) {
-      containerDimensionPixels = 'w-24';
-      albumDimensionPixels = 'w-24 h-24';
+      containerDimensionPixels = 'w-[6.5rem]';
+      albumDimensionPixels = 'w-[6.5rem] h-[6.5rem]';
+    } else if (numAlbums <= 6) {
+      containerDimensionPixels = 'w-[5.5rem]';
+      albumDimensionPixels = 'w-[5.5rem] h-[5.5rem]';
     } else if (numAlbums <= 8) {
       containerDimensionPixels = 'w-20';
       albumDimensionPixels = 'w-20 h-20';
     } else if (numAlbums <= 12) {
-      containerDimensionPixels = 'w-12';
-      albumDimensionPixels = 'w-12 h-12';
+      containerDimensionPixels = 'w-14';
+      albumDimensionPixels = 'w-14 h-14';
     } else {
       // We shouldn't ever reach this.
       containerDimensionPixels = 'w-10';
