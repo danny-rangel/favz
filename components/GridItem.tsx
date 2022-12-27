@@ -49,15 +49,11 @@ export default function GridItem(props: any) {
     if (numAlbums <= 2) {
       return '40';
     } else if (numAlbums <= 3) {
-      return '32';
-    } else if (numAlbums <= 4) {
       return '24';
-    } else if (numAlbums <= 8) {
+    } else if (numAlbums <= 4) {
       return '20';
-    } else if (numAlbums <= 10) {
-      return '16';
     } else if (numAlbums <= 12) {
-      return '10';
+      return '14';
     } else {
       // We shouldn't ever reach this.
       return '8';
